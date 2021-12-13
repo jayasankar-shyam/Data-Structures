@@ -1,48 +1,53 @@
-#include<stdio.h>
-void linear_search(int arr[],int);
+#include <stdio.h>
+void linear_search(int arr[], int);
 int main()
 {
-	int i,n,arr[30],option=1;
+	int i, n, arr[30], option = 1;
 	printf("\nEnter the size of the array : ");
-	scanf("%d",&n);
+	scanf("%d", &n);
 	printf("\nEnter the array elements : ");
-	for(i=0;i<n;i++)
-		scanf("%d",&arr[i]);
+	for (i = 0; i < n; i++)
+		scanf("%d", &arr[i]);
 	printf("\nThe array elements are : ");
-	for(i=0;i<n;i++)
-		printf("%d ",arr[i]);
-	while(option!=0)
+	for (i = 0; i < n; i++)
+		printf("%d ", arr[i]);
+	while (option != 0)
 	{
-		printf("\nWhich operation do you want to do ?\n0-EXIT\n1-Linear Search\nEnter your Choice : ");
-		scanf("%d",&option);
-		switch(option)
+		printf("\nWhich operation do you want to do ?\n0-EXIT\n1-Linear Search\n2-Binary Search\nEnter your Choice : ");
+		scanf("%d", &option);
+		switch (option)
 		{
-			case 0:
-				break;
-			case 1:
-				linear_search(arr,n);
-				break;
+		case 0:
+			break;
+		case 1:
+			linear_search(arr, n);
+			break;
+		case 2:
+			binary_search(arr, n);
 		}
 	}
-	
 }
 
-void linear_search(int arr[],int n)
+void linear_search(int arr[], int n)
 {
-	int i,x,flag=0,loc;
+	int i, x, flag = 0, loc;
 	printf("\nEnter the element to search : ");
-	scanf("%d",&x);
-	for(i=0;i<n;i++)
+	scanf("%d", &x);
+	for (i = 0; i < n; i++)
 	{
-		if(arr[i]==x)
+		if (arr[i] == x)
 		{
-			flag=1;
-			loc=i+1;
+			flag = 1;
+			loc = i + 1;
 			break;
 		}
 	}
-	if(flag==1)
-		printf("\nThe element %d is at the location %d\n",x,loc);
+	if (flag == 1)
+		printf("\nThe element %d is at the location %d\n", x, loc);
 	else
-		printf("\nThe element %d is not found\n",x);
+		printf("\nThe element %d is not found\n", x);
+}
+void binary_search(int arr[], int n)
+{
+	
 }
