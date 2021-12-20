@@ -17,8 +17,9 @@ int main()
         poly[i].exp=i;
     }
     printf("The polynomial is ");
-    for(i=n;i>=0;i--)
+    for(i=n;i>0;i--)
     {
-        printf(" + %.1fx^%d",poly[i].coeff,poly[i].exp);
+        printf(" %.1fx^%d +",poly[i].coeff,poly[i].exp);
     }
+    printf(" %.1fx^%d ",poly[0].coeff,poly[0].exp);
 }
