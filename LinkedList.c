@@ -1,3 +1,6 @@
+/*JAYASANKAR SHYAM
+ROLL NO : 40
+S3 AD*/
 #include <stdio.h>
 #include<stdlib.h>
 struct node
