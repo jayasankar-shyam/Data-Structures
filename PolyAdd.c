@@ -23,7 +23,7 @@ void readPoly(struct Node** poly)
      temp->coeff=coeff;
      temp->pow=exp;
      temp->next=NULL;
-     printf("\n1-Continue\n2-Next Step\n");
+     printf("\n1-Continue\n0-Next Step\n");
      scanf("%d",&cont);
      if(cont)
       {
@@ -106,9 +106,9 @@ int main()
    struct Node*first=NULL;
    struct Node*second=NULL;
    struct Node*result=NULL;
-   printf("\nPolynomial 1 :\n");
+   printf("\n\tPolynomial 1\n\t----------");
    readPoly(&first);
-   printf("\nPolynomial 2:\n");
+   printf("\n\tPolynomial 2\n\t----------");
    readPoly(&second);
    addPoly(&result, first, second);
    displayPoly(first);
