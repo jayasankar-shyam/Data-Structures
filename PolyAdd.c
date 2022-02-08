@@ -8,7 +8,7 @@ struct Node
    struct Node* next;
   };
 
-void readPolynomial(struct Node** poly)
+void readPoly(struct Node** poly)
   {
    int coeff,exp,cont;
    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
@@ -23,7 +23,7 @@ void readPolynomial(struct Node** poly)
      temp->coeff=coeff;
      temp->pow=exp;
      temp->next=NULL;
-     printf("\nTo enter next term \nEnter 1 for YES and 0 for NO: ");
+     printf("\n1-Continue\n2-Next Step\n");
      scanf("%d",&cont);
      if(cont)
       {
@@ -34,7 +34,7 @@ void readPolynomial(struct Node** poly)
     }while(cont);	
   }
 
-void displayPolynomial(struct Node* poly)
+void displayPoly(struct Node* poly)
  {
    printf("\nPolynomial expression is: ");
    while(poly!=NULL)
@@ -46,7 +46,7 @@ void displayPolynomial(struct Node* poly)
    }
  } 
 
-void addPolynomials(struct Node** result,struct Node* first,struct Node* second)
+void addPoly(struct Node** result,struct Node* first,struct Node* second)
   {
    struct Node* temp =(struct Node*)malloc(sizeof(struct Node));
    temp->next=NULL;
@@ -106,14 +106,13 @@ int main()
    struct Node*first=NULL;
    struct Node*second=NULL;
    struct Node*result=NULL;
-   printf("\nPolynomial Addition Using Linked List\n");
-   printf("\nFirst polynomial:\n");
-   readPolynomial(&first);
-   displayPolynomial(first);
-   printf("\nSecond polynomial:\n");
-   readPolynomial(&second);
-   displayPolynomial(second);
-   addPolynomials(&result, first, second);
-   displayPolynomial(result);
+   printf("\nPolynomial 1 :\n");
+   readPoly(&first);
+   printf("\nPolynomial 2:\n");
+   readPoly(&second);
+   addPoly(&result, first, second);
+   displayPoly(first);
+   displayPoly(second);
+   displayPoly(result);
    return 0;
   }
