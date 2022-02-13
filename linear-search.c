@@ -47,7 +47,3 @@ void linear_search(int arr[], int n)
 	else
 		printf("\nThe element %d is not found\n", x);
 }
-void binary_search(int arr[], int n)
-{
-	
-}
