@@ -22,8 +22,7 @@ int main()
 		case 1:
 			linear_search(arr, n);
 			break;
-		case 2:
-			binary_search(arr, n);
+		default:printf("\nInvalid Entry...Try Again");
 		}
 	}
 }
