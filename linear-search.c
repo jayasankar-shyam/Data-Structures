@@ -13,7 +13,7 @@ int main()
 		printf("%d ", arr[i]);
 	while (option != 0)
 	{
-		printf("\nWhich operation do you want to do ?\n0-EXIT\n1-Linear Search\n2-Binary Search\nEnter your Choice : ");
+		printf("\nWhich operation do you want to do ?\n0-EXIT\n1-Linear Search\nEnter your Choice : ");
 		scanf("%d", &option);
 		switch (option)
 		{
