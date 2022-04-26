@@ -1,41 +1,79 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-	int i,n,x,arr[30],mid;
-	char opt;	
-	printf("\nEnter the size of the array : ");
-	scanf("%d",&n);
-	printf("\nEnter the array elements : ");
-	for(i=0;i<n;i++)
-		scanf("%d",&arr[i]);
-	printf("\nThe array elements are : ");
-	for(i=0;i<n;i++)
-		printf("%d ",arr[i]);
-	
+	int i, n, l, u, x, mid, c = 0, k, m = 1;
+	k = 9 * 4;
+	c++;
+	char opt;
+	k++;
+	c++;
+	printf("Enter the the size of array: ");
+	c++;
+	scanf("%d", &n);
+	int a[n];
+	m = n * 4;
+	c++;
+	printf("Enter the array elements in increasing order : ");
+	c++;
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", &a[i]);
+		c++;
+	}
+	c++;
+	printf("The array elements are:\n");
+	c++;
+	for (i = 0; i < n; i++)
+	{
+		printf("%d \n", a[i]);
+		c++;
+	}
+	c++;
 	do
 	{
-		int first=0,last=n-1;
-		mid=(first+last)/2;
-		printf("\nEnter the element to search : ");
-			scanf("%d",&x);
-		while(first<=last)
+		printf("Enter the elements to search\n");
+		c++;
+		scanf("%d", &x);
+		c++;
+		l = 0;
+		c++;
+		u = n - 1;
+		c++;
+		mid = (l + u) / 2;
+		c++;
+		while (l <= u)
 		{
-			
-			if(arr[mid]==x)
+			if (a[mid] == x)
 			{
-				printf("\nThe element %d is at the location %d\n",x,(mid+1));
+				printf("the element is found at position %d \n", mid + 1);
+				c++;
+
 				break;
 			}
-			else if(arr[mid]>x)
-				last=mid-1;
+			else if (x > a[mid])
+			{
+				l = mid + 1;
+				c++;
+			}
 			else
-				first=mid+1;
-			mid=(first+last)/2;
+			{
+				u = mid - 1;
+				c++;
+			}
+			c++;
+			mid = (l + u) / 2;
+			c++;
 		}
-		
-		if(first>last)
-			printf("\nThe element %d not found\n",x);
-		printf("Do yo want to continue(Y/N) : ");
-		scanf(" %c",&opt);
-	}while(opt=='y' || opt=='Y');
+		if (l > u)
+		{
+			printf("element is not found\n");
+		}
+		c++;
+		printf("\n Do you want continue? (Y-for yes)");
+		c++;
+		scanf(" %c", &opt);
+		c++;
+		printf("The number of execution is %d\n", c);
+		printf("The space complexity is %d\n", (k + m));
+	} while (opt == 'y' || opt == 'Y');
 }

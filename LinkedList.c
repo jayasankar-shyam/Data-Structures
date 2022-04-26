@@ -202,7 +202,7 @@ int main()
         case 1:insertion();
                break;
         case 2:delete();
-               break;
+               break;          
         case 3:display();
                break;
         case 4:exit(0);

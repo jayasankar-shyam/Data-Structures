@@ -16,14 +16,14 @@ void readPoly(struct Node** poly)
 
    do
     {
-     printf("\nEnter Coeffecient: ");
+     printf("Enter Coeffecient: ");
      scanf("%d",&coeff);
-     printf("\nEnter Exponent: ");
+     printf("Enter Exponent: ");
      scanf("%d",&exp);
      temp->coeff=coeff;
      temp->pow=exp;
      temp->next=NULL;
-     printf("\n1-Continue\n0-Next Step\n");
+     printf("\n1-Continue\t0-Next Step\n");
      scanf("%d",&cont);
      if(cont)
       {
@@ -31,7 +31,7 @@ void readPoly(struct Node** poly)
        temp=temp->next;
        temp->next=NULL;
       }
-    }while(cont);	
+    }while(cont);
   }
 
 void displayPoly(struct Node* poly)
@@ -44,14 +44,14 @@ void displayPoly(struct Node* poly)
     if(poly!=NULL)
     printf("+");
    }
- } 
+ }
 
 void addPoly(struct Node** result,struct Node* first,struct Node* second)
   {
    struct Node* temp =(struct Node*)malloc(sizeof(struct Node));
    temp->next=NULL;
    *result=temp;
-   
+
    while(first && second)
      {
       if(first->pow>second->pow)
@@ -85,7 +85,7 @@ void addPoly(struct Node** result,struct Node* first,struct Node* second)
       temp->next=(struct Node*)malloc(sizeof(struct Node));
       temp=temp->next;
       temp->next=NULL;
- 			
+
       if(first)
  	{
  	 temp->coeff=first->coeff;
@@ -106,9 +106,9 @@ int main()
    struct Node*first=NULL;
    struct Node*second=NULL;
    struct Node*result=NULL;
-   printf("\n\tPolynomial 1\n\t----------");
+   printf("\n\tPolynomial 1\n\t----------\n");
    readPoly(&first);
-   printf("\n\tPolynomial 2\n\t----------");
+   printf("\n\tPolynomial 2\n\t----------\n");
    readPoly(&second);
    addPoly(&result, first, second);
    displayPoly(first);

@@ -12,15 +12,11 @@ int main()
         scanf("%d",&arr[i]);
         c++;
     }
-    for(i=0 ; i<n ; i++)
-    {
-        min = i;
-        for(j=i+1 ; j<n ; j++)
-        {
-            if(arr[j] < arr[min])
-            {
-                min = j;
-                c++;
+    for(i=0;i<n;i++){
+        min=i;
+        for(j=i+1;j<n;j++){
+            if(arr[j]<arr[min]){
+                min=j;
             }
         }
         if(min != i)
@@ -28,17 +24,10 @@ int main()
             temp = arr[i];
             arr[i] = arr[min];
             arr[min] = temp;
-            c+=3;
+            
         }
-        c++;
     }
-    c++;
-    printf("\nSorted Array: ");
-    for(i=0 ; i<n ; i++){
+     printf("\nSorted Array: ");
+    for(i=0 ; i<n ; i++)
         printf(" %d" , arr[i]);
-    }
-    c++;
-    printf("\nSpace Complexity: %d", s);
-    printf("\nTime Complexity: %d\n", c);
-    return 0;
 }

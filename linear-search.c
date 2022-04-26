@@ -1,48 +1,50 @@
-#include <stdio.h>
-void linear_search(int arr[], int);
+#include<stdio.h>
 int main()
 {
-	int i, n, arr[30], option = 1;
-	printf("\nEnter the size of the array : ");
-	scanf("%d", &n);
-	printf("\nEnter the array elements : ");
-	for (i = 0; i < n; i++)
-		scanf("%d", &arr[i]);
-	printf("\nThe array elements are : ");
-	for (i = 0; i < n; i++)
-		printf("%d ", arr[i]);
-	while (option != 0)
-	{
-		printf("\nWhich operation do you want to do ?\n0-EXIT\n1-Linear Search\nEnter your Choice : ");
-		scanf("%d", &option);
-		switch (option)
-		{
-		case 0:
-			break;
-		case 1:
-			linear_search(arr, n);
-			break;
-		default:printf("\nInvalid Entry...Try Again");
-		}
-	}
-}
+  int n,count=0,i,t,s,space=24;
+  char opt;space+=1;
+  printf("Enter the size of array: ");
+  scanf("%d" , &n);
+  space += (n*4);
+  int arr[n];
+  printf("Enter Array Elements:");
+  for(i=0 ; i<n ; i++)
+  {
+    scanf("%d" , &arr[i]);
+    count++;
+  }
+  count++;
+  t=count;
+  s=space;
+  do{
+      printf("\nEnter the array element to search: ");
+      count=t;space=s;
+      int x , loc = -1;
+      space += 8;
+      scanf("%d" , &x);
+      count++;
+      for(i=0 ; i<n ; i++)
+      {
+        if(arr[i] == x)
+        {
+          loc = i;
+          count++;
+          break;
+        }
+        count++;
+      }
+      count++;
 
-void linear_search(int arr[], int n)
-{
-	int i, x, flag = 0, loc;
-	printf("\nEnter the element to search : ");
-	scanf("%d", &x);
-	for (i = 0; i < n; i++)
-	{
-		if (arr[i] == x)
-		{
-			flag = 1;
-			loc = i + 1;
-			break;
-		}
-	}
-	if (flag == 1)
-		printf("\nThe element %d is at the location %d\n", x, loc);
-	else
-		printf("\nThe element %d is not found\n", x);
+      if(loc != -1)
+      {
+        printf("%d is found at %d" , x,loc);
+      }
+      else
+        printf("%d is not found" , x);
+      printf("\nSpace Complexity: %d", space);
+      printf("\nTime Complexity: %d", count);
+      printf("\nDo you want to continue(Y/N):");
+      scanf(" %c",&opt);
+  }while(opt =='y'|| opt=='Y');
+  return 0;
 }

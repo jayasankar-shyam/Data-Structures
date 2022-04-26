@@ -1,34 +1,28 @@
-#include<stdio.h>
-
-void insertionSort(int arr[], int n)
-{
-	int temp;
-	for(int i=1; i<n; i++)
-	{
-		for(int j=0; j<i; j++)
-		{
-			if(arr[j] > arr[i])
-			{
-				temp = arr[j];
-				arr[j] = arr[i];
-				arr[i] = temp;
-			}
-		}
-	}
-}
-
+#include <stdio.h>
 int main()
 {
-	int n;
-	printf("Enter the size of array: ");
-	scanf("%d",&n);
-	int arr[n];
-	printf("Enter the elements: ");
-	for(int i=0 ; i<n ; i++)
-		scanf("%d",&arr[i]);
-	printf("Sorted Array: ");
-	insertionSort(arr, n);
-	for(int i=0; i<n; i++)
-		printf("%d ",arr[i]);
-	return 0;
+  int n, array[20],c,d,t,flag = 0;
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
+  printf("Enter %d integers : ", n);
+  for (c = 0; c < n; c++)
+    scanf("%d", &array[c]);
+  for (c = 1 ; c <= n - 1; c++) {
+    t = array[c];
+    for (d = c - 1 ; d >= 0; d--) {
+      if (array[d] > t) {
+        array[d+1] = array[d];
+        flag = 1;
+      }
+      else
+        break;
+    }
+    if (flag)
+      array[d+1] = t;
+  }
+  printf("Sorted list in ascending order:\n");
+  for (c = 0; c <= n - 1; c++) {
+    printf("%d ", array[c]);
+  }
+  return 0;
 }

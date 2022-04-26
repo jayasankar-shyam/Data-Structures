@@ -2,7 +2,7 @@
 ROLL NO : 40
 S3 AD*/
 #include <stdio.h>
-int items[100], front = -1, rear = -1,SIZE=10;
+int items[100], front = -1, rear = -1,SIZE=3;
 
 void enqueue() {
     int value;
