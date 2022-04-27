@@ -17,16 +17,6 @@ char pop()
 {
   return (s[top--]);
 }
-
-void display(int k, char p[])
-{
-  for (int i = 0; i <= top; i++)
-    printf("%c", s[i]);
-  printf("\n");
-  for (int i = 0; i < k; i++)
-    printf("%c", p[i]);
-}
-
 int precedence(char exp)
 {
   switch (exp)
@@ -82,8 +72,7 @@ void convert(char in[], char pf[])
       pf[k++] = ch;
     }
   }
-  while ((pf[k++] = pop()) != '\0')
-    ;
+  while ((pf[k++] = pop()) != '\0');
 }
 
 int main()
