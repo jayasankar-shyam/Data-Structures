@@ -1,6 +1,4 @@
-/*JAYASANKAR SHYAM
-ROLL NO : 40
-S3 AD*/
+
 #include <string.h>
 #include <stdio.h>
 #define SIZE 20
