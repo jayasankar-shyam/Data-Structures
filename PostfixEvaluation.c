@@ -1,6 +1,3 @@
-/*JAYASANKAR SHYAM
-ROLL NO : 40
-S3 AD*/
 #include<stdio.h>
 #define STACK_MAX 100
 

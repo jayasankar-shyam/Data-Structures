@@ -1,6 +1,4 @@
-/*JAYASANKAR SHYAM
-ROLL NO : 40
-S3 AD*/
+
 #include <stdio.h>
 #define lim 4
 int stack[lim],top=-1,i,c,e;

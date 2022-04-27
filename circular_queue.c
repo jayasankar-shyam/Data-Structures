@@ -1,6 +1,4 @@
-/*JAYASANKAR SHYAM
-ROLL NO : 40
-S3 AD*/
+
 #include<stdio.h>
 # define MAX 10
 int cqueue[MAX];
