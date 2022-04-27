@@ -54,7 +54,7 @@ int main()
 
                   case'-':a=pop();
                           b=pop();
-                          res=a-b;
+                          res=b-a;
                           push(res);
                           break;
 
@@ -66,7 +66,7 @@ int main()
 
                   case'/':a=pop();
                           b=pop();
-                          res=a/b;
+                          res=b/a;
                           push(res);
                           break;
 
